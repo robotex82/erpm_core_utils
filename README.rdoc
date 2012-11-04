@@ -1,0 +1,3 @@
+= ERPM Module Template
+
+This project rocks and uses MIT-LICENSE.
