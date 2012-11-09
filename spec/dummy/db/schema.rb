@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102153103) do
+ActiveRecord::Schema.define(:version => 20121109113650) do
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "net_price_cents"
+    t.integer  "tax_rate_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "line_items", ["tax_rate_id"], :name => "index_line_items_on_tax_rate_id"
 
   create_table "posts", :force => true do |t|
     t.string   "title"
